@@ -1,0 +1,161 @@
+<html>
+<head>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/ezto_ext.js"></script>
+	
+<style>
+body{font-family:arial;margin:0;}
+.wrapper{margin:0 auto;width:1206px;font-size:14px;}
+.renderSize{width:46%;float:left;}
+.renderMode{width:20%;float:left;}
+.renderState{width:33%;float:left;text-align:right;}
+h1{font-size:16px;color:#5C5B59;font-weight:normal;}
+.clear{clear:both;height:0;}
+/*.dimensn{float:left;width:100px;margin-right:14px;}*/
+.dimensn{float:left;margin-right:14px;}
+.refresh{margin:10px 0px;}
+.pullRight{float:right;}
+.pullLeft{float:left;}
+.topHeader{background-color:#323232;padding:12px 13px;color:#ffffff;font-weight:bold;}
+.innerWrapper{border-bottom:1px dashed #dcdcdc;padding-bottom:12px;}
+.dimInput{
+    border-color: #AFAFAF;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 5px #CFCFCF inset;
+    font-size: 12px;
+    margin-left: 9px;
+    margin-right: 16px;
+    padding: 6px 5px 7px;
+    width: 100px;}
+	.bottonBG{border-radius:4px;
+	cursor:pointer;
+	border: 1px solid #CCCCCC;
+	padding: 5px 14px;
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #DCDCDC 100%);
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #DCDCDC 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #DCDCDC 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #DCDCDC));
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #DCDCDC 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #DCDCDC 100%);
+	 -webkit-transition: background-color 500ms ease-out 1s;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	
+	}
+	
+	.dimInput:focus {
+    border-color: #66AFE9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+}
+	.bottonBG:hover{-webkit-box-shadow: 0px 0px 1px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow:    0px 0px 1px rgba(50, 50, 50, 0.56);
+	box-shadow:         0px 0px 1px rgba(50, 50, 50, 0.56);}
+.custDropDown{
+	cursor:pointer;
+	 border: 1px solid #CCCCCC;
+    padding: 4px;
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #DCDCDC 100%);
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #DCDCDC 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #DCDCDC 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #DCDCDC));
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #DCDCDC 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #DCDCDC 100%);};
+}
+
+
+</style>
+	
+	
+<script language="javascript" type="text/javascript">	
+
+	/* uncomment for testing off localhost
+	var dName = document.domain;
+	if ((dName.indexOf(".com") > -1) && (dName.indexOf(".") > -1)) {
+		var temp = dName.split(".");
+		dName = temp[temp.length - 2] + "." + temp[temp.length - 1];
+	}
+	document.domain= dName;
+	*/
+	
+	
+</script>
+
+</head>
+
+<body>
+
+	<form name="formTool" onsubmit="return false;">
+	<div class="topHeader">FORM TOOL</div>
+	<div class="wrapper">
+		<div class="innerWrapper">
+			<!--<div class="renderSize">
+				<h1>Rendering Size</h1>
+				<div class="dimensn">
+				<label>Width</label><input type="text" size="4" value="300" id="frame_height" class="dimInput">
+				</div>
+				<div class="dimensn">
+				<label>Height</label><input type="text" size="4" value="300" id="frame_Width" class="dimInput">
+				</div>
+				<div class="clear"></div>
+			</div>-->
+			<div class="renderSize">
+				<h1>Rendering Size</h1>
+				<div class="dimensn">
+				<label>Width</label><input type="text" size="4" value="800" id="frame_width" class="dimInput">
+				<label>Height</label><input type="text" size="4" value="600" id="frame_height" class="dimInput">
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="renderMode">
+			<h1>Rendering Mode</h1>
+				<select onchange="wa_ex_resetandtrigger();"id="Q_EXTERNAL_mode" name="Q_EXTERNAL_mode" class="custDropDown" >
+					<option value="design" selected="">design</option>
+					<option value="preview">preview</option>
+					<option value="test">student (test)</option>
+					<option value="sample">check my work (sample)</option>
+					<option value="review">post submission (review)</option>
+				</select>
+			</div>
+			<div class="renderState">
+			<h1>Rendering State</h1>
+			<button onclick="wa_ex_gather();" class="bottonBG">Retrieve</button>
+			</div>
+			<br>
+			<div>
+				<h1>State</h1>
+				<textarea rows="5" cols="89" id="Q_EXTERNAL_state" name="Q_EXTERNAL_state"></textarea>
+			</div>
+			<div class="policy">
+				<input type="hidden" id="p_indicators" value="true" />
+		</div>
+			<div class="clear"></div>
+		</div>	
+		<div class="refresh">
+			<button onclick="loadPage()" class="bottonBG">Load Page</button>
+		</div>
+		<iframe class="wk_ex_iframe" style="z-index: 1;overflow-x: hidden;"
+					name="Q_EXTERNAL" id="Q_EXTERNAL" frameborder="1" src=""
+					width="300" height="100"> </iframe>
+	</div>	
+	</form>
+	<script type="text/javascript">
+	function wa_ex_resetandtrigger(){
+		var currSrc = $("#Q_EXTERNAL").attr("src");
+		$("#Q_EXTERNAL").attr("src", currSrc);
+	}
+	function loadPage(){
+		$("#Q_EXTERNAL").attr("src","form-tool.html?Q_EXTERNAL");
+	}
+	function wa_ex_gather(){
+		var state = $("#Q_EXTERNAL").contentDocument.getScore();
+		//alert(state);
+	}
+	</script>
+	</body>
+</html>

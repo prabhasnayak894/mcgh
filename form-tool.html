@@ -1,0 +1,184 @@
+<html>
+<head>
+  <title> Form Tool </title>
+
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css" >
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" >
+  <link href="css/table.css" rel="stylesheet" type="text/css" media="screen" >
+  <link href="css/branching.css" rel="stylesheet" type="text/css" media="screen" >
+  <link href="css/media.css" rel="stylesheet" type="text/css" media="screen" >
+  <link href="css/datepicker.css" rel="stylesheet" type="text/css" media="screen" >
+  <link href="css/reveal.css" rel="stylesheet" type="text/css" >
+  <link href="css/style-print.css" rel="stylesheet" type="text/css" media="print" >
+  <link href="css/jPicker-1.1.6.min.css" rel="stylesheet" type="text/css" >
+    <link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" >
+    
+  <link href="css/jquery.handsontable.full.css" rel="stylesheet" type="text/css" >
+  <style type="text/css">
+.coming_soon {
+	margin: 1% auto;
+	width: 327px;
+}
+</style>
+  
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/ezto_ext_api_local.js"></script>
+
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jpicker-1.1.6.js"></script> 
+<script type="text/javascript" src="js/jstepper.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+<script type="text/javascript" src="js/jquery.resize.js"></script>  
+
+<script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript" src="js/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="js/bootstrap_custom.js"></script>
+<script type="text/javascript" src="js/jquery.htmlClean.min.js"></script>
+<script type="text/javascript" src="js/math.min.js"></script>
+<script type="text/javascript" src="js/SpecialCharacter.js"></script>
+
+<script type="text/javascript" src="js/component/branch/Branch.js"></script>
+<script type="text/javascript" src="js/component/branch/Path.js"></script>
+<script type="text/javascript" src="js/component/branch/PathMap.js"></script>
+<script type="text/javascript" src="js/component/branch/BranchRange.js"></script>
+
+<script type="text/javascript" src="js/component/Question.js"></script>
+<script type="text/javascript" src="js/component/Component.js"></script>
+<script type="text/javascript" src="js/component/Page.js"></script>
+<script type="text/javascript" src="js/component/Formula.js"></script>
+
+<script type="text/javascript" src="js/component/checkallapply/CheckboxComponent.js"></script>
+<script type="text/javascript" src="js/component/checkallapply/Option.js"></script>
+<script type="text/javascript" src="js/component/checkallapply/OptionEditor.js"></script>
+<script type="text/javascript" src="js/component/checkallapply/CheckboxComponentSection.js"></script>
+<script type="text/javascript" src="js/component/checkallapply/CheckBoxSubCategory.js"></script>
+<script type="text/javascript" src="js/component/checkallapply/CheckBoxSubCategoryRange.js"></script>
+
+<script type="text/javascript" src="js/component/multiplechoice/MultipleChoiceComponent.js"></script>
+<script type="text/javascript" src="js/component/multiplechoice/MultipleChoiceOption.js"></script>
+<script type="text/javascript" src="js/component/multiplechoice/MultipleChoiceOptionAnswer.js"></script>
+<script type="text/javascript" src="js/component/multiplechoice/MultipleChoiceSection.js"></script>
+<script type="text/javascript" src="js/component/multiplechoice/MultipleChoiceSubCategory.js"></script>
+<script type="text/javascript" src="js/component/multiplechoice/Range.js"></script>
+<script type="text/javascript" src="js/component/multiplechoice/MultipleChoiceSubCategoryRange.js"></script>
+<script type="text/javascript" src="js/component/multiplechoice/SectionLabel.js"></script>
+
+<script type="text/javascript" src="js/component/scale/ScaleComponent.js"></script>
+<script type="text/javascript" src="js/component/scale/ScaleCriteria.js"></script>
+<script type="text/javascript" src="js/component/scale/ScaleSubCategory.js"></script>
+<script type="text/javascript" src="js/component/scale/Statement.js"></script>
+<script type="text/javascript" src="js/component/scale/SubCategoryRange.js"></script>
+<script type="text/javascript" src="js/component/scale/ScaleLabel.js"></script>
+
+
+<script type="text/javascript" src="js/component/inputField/InputFieldComponent.js"></script>
+<script type="text/javascript" src="js/component/inputField/InputFieldSection.js"></script>
+<script type="text/javascript" src="js/component/inputField/AuthorEntry.js"></script>
+<script type="text/javascript" src="js/component/inputField/StudentEntry.js"></script>
+<script type="text/javascript" src="js/component/inputField/ContentFormatEnum.js"></script>
+<script type="text/javascript" src="js/component/inputField/Formatter.js"></script>
+
+<script type="text/javascript" src="js/component/common/GTCommon.js"></script>
+<script type="text/javascript" src="js/component/common/Modal.js"></script>
+<script type="text/javascript" src="js/component/common/Messages.js"></script>
+<script type="text/javascript" src="js/component/common/util.js"></script>
+<script type="text/javascript" src="js/component/common/Editor.js"></script>
+<script type="text/javascript" src="js/component/common/NumericEditor.js"></script>
+<script type="text/javascript" src="js/component/common/ProgressBar.js"></script>
+<script type="text/javascript" src="js/component/common/PartInfo.js"></script>
+<script type="text/javascript" src="js/component/common/Media.js"></script>
+
+<script type="text/javascript" src="js/component/tableComponent/jquery.handsontable.full.js"></script>
+<script type="text/javascript" src="js/component/tableComponent/TableComponent.js"></script>
+
+<script type="text/javascript" src="js/component/tableComponent/tableLabelComponent/TableLabelComponent.js"></script>
+
+<script type="text/javascript" src="js/component/tableComponent/tableInputFieldComponent/TableInputFieldComponent.js"></script>
+<script type="text/javascript" src="js/component/tableComponent/tableInputFieldComponent/TableStudentEntry.js"></script>
+
+<script type="text/javascript" src="js/component/tableComponent/tableCheckboxComponent/TableCheckboxComponent.js"></script>
+<script type="text/javascript" src="js/component/tableComponent/tableCheckboxComponent/TableOption.js"></script>
+<script type="text/javascript" src="js/component/tableComponent/tableCheckboxComponent/TableOptionEditor.js"></script>
+
+<script type="text/javascript" src="js/component/tableComponent/tableDropdownComponent/TableDropDownComponent.js"></script>
+<script type="text/javascript" src="js/component/tableComponent/tableDropdownComponent/TableDropDownOption.js"></script>
+<script type="text/javascript" src="js/component/tableComponent/tableDropdownComponent/TableDropDownOptionAnswer.js"></script>
+<script type="text/javascript" src="js/component/tableComponent/tableDropdownComponent/TableDropDownSection.js"></script>
+
+<script type="text/javascript" src="js/undo.js"></script>
+
+<script type="text/javascript" src="js/jquery.zclip.js"></script>
+
+<script type="text/javascript" src="js/function.js"></script>
+<!-- <script src="js/custom.js"></script> -->
+<script type="text/javascript">
+
+	/* var dName = document.domain;
+	if ((dName.indexOf(".com") > -1) && (dName.indexOf(".") > -1)) {
+		var temp = dName.split(".");
+		dName = temp[temp.length - 2] + "." + temp[temp.length - 1];
+	}
+	document.domain= dName; */
+	
+	var frameWidth = null, frameHeight = null;
+	var mode = "", ifraemId = "", questionId = "", mediaValue = "", instanceId = 0, shellInput = '', EZPolicy = {}, selectedInstance=null;
+	var timeout=200;
+	var math = mathjs();
+	function setState(theState) {
+	    mode = EZ.mode;
+	 
+	      startTool(theState);
+	    return;
+	}
+
+	function getState() {
+		clickIMDone();
+		return $("#FTState").val();
+	}
+	function getScore() {
+	   clickIMDone();
+	   return $("#score").val();
+	}
+	function resizeMe(width,height)	 {
+	    EZ.resize(width,height);
+	}
+/* 	function getPolicy() {
+	    var thePolicy= EZ.policy( $('#policy_name').val() );					
+	    return thePolicy;
+	} */
+	function startTool(theState){
+		if(mode == MODE_TEST || mode == MODE_PREGRADE || mode == MODE_PREVIEW || mode == MODE_POST_TEST){
+			//alert("Selected Mode = "+mode);
+			resizeMe(1120,900);
+		//	startAppInConnectView(theState);
+		}else if(mode == MODE_DESIGN){
+			frameWidth = $(document).width();
+			frameHeight = $(document).height()<=600?600:$(document).height(); 
+			resizeMe(1120,frameHeight);
+		//	startAppInDesignMode(theState);
+		}
+		startApp(theState);
+	}
+</script>
+</head>
+<body>
+		<div id="loadingImg" class="loadingImg">
+		</div>
+		<div  id="modalDivId" class="ui-widget-overlay" style="z-index: 1045;">
+		</div>
+	<div id="wrapper">
+	</div>
+
+		<input type="hidden" id="FTState" value="" />
+		<input type="hidden" id="score" value="" />
+		<input type="hidden" id="activeHyperlink" value="" />
+		<div id="tempDiv" style="display: none;"></div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</body>
+</html>

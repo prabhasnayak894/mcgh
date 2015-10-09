@@ -1,0 +1,252 @@
+table.gridtable {
+    color:#222;
+    border-width: 1px;
+    border-color: #cccccc;
+    border-collapse: collapse;
+    width: auto;
+    height: auto;
+    
+   display: initial;  /*commented this line for issue no 1479*/
+    padding-bottom: 5px;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 2px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: #eeeeee;
+    text-align: center;
+    font-weight: normal;
+    color: #222222;
+    white-space: nowrap;
+    line-height: 21px;
+    vertical-align: top;
+    font-family: 'helveticaregular';
+    
+}
+.studentEntryLayout{
+    white-space: normal !important;
+}
+ .studentEntryLayout .hasDatepicker{
+     height: 90%;
+     width: 97% !important;/*added for table border issue*/
+     font-size: 11px;/*added for table border issue*/
+    /*  min-width: 73px !important;  */
+}
+ .studentEntryLayout .stdinputFieldStudentEntry{
+    
+}  
+
+::-webkit-input-placeholder {
+   text-align:center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align:center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align:top;  
+   line-height: normal;
+}
+
+:-ms-input-placeholder {  
+   text-align:center; 
+}
+table.gridtable td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: #ffffff;
+    font-weight: normal;
+    color: #222222;
+    white-space: nowrap;
+    line-height: 21px;
+    vertical-align: top;
+    font-family: 'helveticaregular';
+    height: 100%;
+    /*min-width: 90px;*/
+}
+.preview_AAA{
+    height: 50% !important;
+}
+.inputFieldStudentEntryPreview{
+	height: 50% !important;
+	
+}
+.gridtable .inputFieldStudentEntry {
+	line-height: 1;
+    overflow: hidden;
+    /*min-width: 75px;*/
+    height: 100% !important;
+    width: 100% !important;
+   
+}
+.gridtable .inputFieldStudentEntryPercentage{	
+    padding-right: 14px !important;
+}
+.gridtable .inputFieldStudentEntryOther{	
+    padding-right: 0px !important;
+}
+.gridtable .postSubmission {
+    height: auto !important;
+}
+td .rowPagesectionStudent{
+    width: 100%;
+    height: 90%;
+}
+td .stdlabelEditField{
+    min-width: 0px !important;
+    white-space: normal !important;
+    width: 100% !important;
+}
+/*for post submission in chrome*/
+td .stdlabelEditFieldPostChrome{
+	white-space: normal !important;
+	padding: 4px 5px;
+}
+td div .column-1{
+    /*width: 100% !important;
+    max-width: 100px;*/
+    word-wrap: break-word;
+    width: 100% !important;
+    height: auto !important;
+}
+
+td div .column-wid{
+    /*width: 100% !important;
+    max-width: 100px;*/
+    width: 92% !important;
+}
+td div .inputFieldStudentEntry {
+    /*height: 100% !important;*/
+}
+td .inputDummy{
+    min-width: 0px !important;
+}
+td .stdprevQuest{
+    width: 95%;
+}
+td .tableCellComponent, td .column-1{
+    border: 0 !important;
+}
+.redBorderCell{
+	 border: 2px solid red !important;
+}
+.incompleteCell{
+  border: 3px solid red !important;
+}
+.inCorrectCell{
+  border: 3px solid red !important;
+}
+.postSubmissionGridtable{
+	width:93% !important;
+}
+.postSubmissionGridtable .prevQuestOpts{
+	padding-left:5px;
+}
+.postSubmissionGridtable .prevQuest{
+	padding:0;
+}
+.postSubmissionGridtable .prevQuestOpt{
+	padding:0;
+	width:100%;
+}
+.postSubmissionGridtable .secondColPic{
+	min-width:18px	
+}
+.postSubmissionGridtable .stdQueLabel{
+	min-width:17px;
+} 
+.postSubmissionGridtable .correctAnswerText{
+	padding-left:0;
+}
+.postSubmissionGridtable .answerTick{
+	margin-top:10px!important;
+}
+
+
+.postSubmissionGridtable .inCompleteAnswerBannerTable{
+	margin-top:-5px;
+}
+.postSubmissionGridtable .overallFeedOpen {
+	
+}
+.postSubmissionGridtable .rowPagesection {
+	padding:0;
+}
+.postSubmissionGridtable .prevQuestOpts{
+	padding:0;
+}
+.postSubmissionGridtable .prevQuest{
+	width:100%;
+}
+.postSubmissionGridtable .inputFieldStudentEntry{
+	min-height:33px!important;
+}
+.mainQuestionSection{
+	margin-top:5px;
+}
+.postSubmissionGridtable td{
+    white-space: normal !important;
+}
+td .inputDummy{
+    max-width: 800px !important;
+}
+td .column-1{
+    
+}
+.notapplicable{
+    width: auto;
+    height: auto;
+    z-index: 999999;
+    opacity: 0.4;
+}
+.gridtable .secondColPic{
+	white-space: normal;
+}
+/*to adjust td's input field components height */
+.handsontable td.tableCell{position: relative;}
+/*to adjust td's input field component's percentsymbol */
+.handsontable td div.percentSymbol{
+	background-position: 95.4% top !important;
+}
+/*adjust merged input field components td for formula highlight*/
+.formulaTD{
+	overflow:scroll !important;
+}
+.formulaTD .cellBorder{
+	position: absolute !important;
+}
+.topBorder {
+    border-top:thin double !important;
+    border-top-color:black !important;
+}
+
+.bottomBorder {
+    border-bottom:thin solid !important;
+    border-bottom-color:black !important;
+}
+
+.leftBorder {
+    border-left:thin double !important;
+    border-left-color:black !important;
+}
+
+.rightBorder {
+    border-right:thin solid !important;
+    border-right-color:black !important;
+}
+.postSubMinHtLbl{
+	min-height : 21px;
+}
+.spanWid{
+display: inline-block;
+/* width: 90%; */ /*commented for table date shifting below frst line*/
+ background-color: transparent !important;
+}
+.spnWid{
+display: inline-block;
+width: 93%;	
+ background-color: transparent !important;
+}

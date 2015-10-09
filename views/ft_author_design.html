@@ -1,0 +1,691 @@
+<div id="wrapper">
+	<!--LEFT container starts -->
+	<div id="lft-container">
+		<!--Header starts -->
+		<header class="navbar-fixed-top" style="width: 840px;">
+			<div class="form-heading">
+				<span class="version">Sprint 14_Build 6</span> <span
+					class="versionTitle">Form Tool</span>
+			</div>
+			 <input id="formTool-version" type="hidden" value="20151006.1">
+			
+			<div class="form-tool">
+				<!-- tool set one-->
+				<div class="tool-set1" data-target="#formToolCanvasId"
+					data-role="editor-toolbar">
+					<label class="btn btn-grey  btn-xs" data-toggle="buttons"
+						title="Import"> <input type="checkbox"><img
+						src="img/folderIn.png" id="btn-fake-import">
+					</label> <label class="btn btn-grey  btn-xs" data-toggle="buttons"
+						title="Export"> <input type="checkbox"><img
+						src="img/folderOut.png" onclick="exportDataToFile()">
+					</label>
+					<button class="btn btn-grey btn-xs undo" data-edit="undo" title="Undo">
+						<input type="checkbox" onclick='document.execCommand("undo", false, "");'> <img src="img/icon22.png">
+					</button>
+					<button class="btn btn-grey btn-xs redo" data-edit="redo" title="Redo">
+						<input type="checkbox" onclick='document.execCommand("redo", false, "");'> <img src="img/icon33.png">
+					</button>
+					<button id="menubarcopyBtn" class="btn btn-grey btn-xs" data-edit="copy"
+						data-toggle="buttons" title="Copy">
+						<input type="checkbox"> <img src="img/folderStr.png">
+					</button>
+					<button class="btn btn-grey btn-xs" data-edit="paste"
+						data-toggle="buttons" title="Paste" onclick="pasteData();">
+						<input type="checkbox"> <img src="img/icon56.png">
+					</button>
+					<div style="visibility: hidden;">
+						<button id="colorButtonId" data-edit="foreColor"></button>
+						<button id="backColorButtonId" data-edit="backColor"></button>
+						<input type="hidden" id="typeOfPalletId" value="" />
+					</div>
+				</div>
+				<!-- tool set two-->
+				<div class="tool-set2" data-target="#formToolCanvasId"
+					data-role="editor-toolbar">
+					<!-- set2-->
+					<div class="colnOuter">
+						<div class="colnInner">
+							<div class="coln-1">
+								<label class="btn btn-grey  btn-xs" data-toggle="buttons">
+									<input type="checkbox">Font size
+								</label>
+								<!-- <label class="btn btn-grey  btn-xs" data-toggle="buttons"  style="margin-bottom:8px;">
+									<input type="checkbox"><img src="img/bluearw.png">
+									</label>-->
+							</div>
+							<!-- set2-->
+							<div class="coln-2">
+								<!--font-size-->
+								<div class="input-group" style="margin-bottom: 7px;">
+									<input id="fontValueId" type="text" class="form-control"
+										value="14 pt">
+									<div class="input-group-btn">
+										<button data-toggle="dropdown"
+											class="btn btn-default dropdown-toggle" title="Font Size"
+											type="button">
+											<span class="caret"></span>
+										</button>
+										<ul role="menu" class="dropdown-menu pull-right">
+											<li><a id="font_6" data-edit="fontSize 6"
+												href="javascript:changeFont('font_6')">6 pt <span>
+												</span></a></li>
+											<li><a id="font_7" data-edit="fontSize 7"
+												href="javascript:changeFont('font_7')">7 pt <span></span></a></li>
+											<li><a id="font_8" data-edit="fontSize 8"
+												href="javascript:changeFont('font_8')">8 pt <span>
+												</span></a></li>
+											<li><a id="font_9" data-edit="fontSize 9"
+												href="javascript:changeFont('font_9')">9 pt <span>
+												</span></a></li>
+											<li><a id="font_10" data-edit="fontSize 10"
+												href="javascript:changeFont('font_10')">10 pt <span>
+												</span></a></li>
+											<li><a id="font_11" data-edit="fontSize 11"
+												href="javascript:changeFont('font_11')">11 pt <span>
+												</span></a></li>
+											<li><a id="font_12" data-edit="fontSize 12"
+												href="javascript:changeFont('font_12')">12 pt <span>
+												</span></a></li>
+											<li><a id="font_14" data-edit="fontSize 14"
+												href="javascript:changeFont('font_14')">14 pt <span
+													class="glyphicon glyphicon-ok glyphicon-posi"> </span></a></li>
+											<li><a id="font_18" data-edit="fontSize 18"
+												href="javascript:changeFont('font_18')">18 pt <span>
+												</span></a></li>
+											<li><a id="font_21" data-edit="fontSize 21"
+												href="javascript:changeFont('font_21')">21 pt <span>
+												</span></a></li>
+											<li><a id="font_24" data-edit="fontSize 24"
+												href="javascript:changeFont('font_24')">24 pt <span>
+												</span></a></li>
+											<li><a id="font_30" data-edit="fontSize 30"
+												href="javascript:changeFont('font_30')">30 pt <span>
+												</span></a></li>
+											<li><a id="font_36" data-edit="fontSize 36"
+												href="javascript:changeFont('font_36')">36 pt <span>
+												</span></a></li>
+											<li><a id="font_48" data-edit="fontSize 48"
+												href="javascript:changeFont('font_48')">48 pt <span>
+												</span></a></li>
+											<li><a id="font_60" data-edit="fontSize 60"
+												href="javascript:changeFont('font_60')">60 pt <span>
+												</span></a></li>
+											<li><a id="font_72" data-edit="fontSize 72"
+												href="javascript:changeFont('font_72')">72 pt <span>
+												</span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+								
+						</div>
+						<!--colnInner-->
+						<div class="colnInner">
+							<button class="btn btn-grey  btn-xs" data-edit="justifyleft"
+								title="Allign Text - Left"
+								style="padding-top: 3px; margin-right: 1px; margin-left: 4px;">
+								<input type="checkbox"> <img src="img/left_icon.png">
+							</button>
+
+							<button class="btn btn-grey  btn-xs" data-edit="justifycenter"
+								title="Allign Text - Center"
+								style="padding-top: 3px; margin-right: 1px;">
+								<input type="checkbox"><img src="img/center_icon.png">
+							</button>
+
+							<button class="btn btn-grey  btn-xs" data-edit="justifyright"
+								title="Allign Text - Right"
+								style="padding-top: 3px; margin-right: 1px;">
+								<input type="checkbox"><img src="img/right_icon.png">
+							</button>
+
+							<button class="btn btn-grey  btn-xs" data-edit="justifyfull"
+								title="Allign Text - Justify" style="padding-top: 3px;">
+								<input type="checkbox"><img src="img/justify_icon.png">
+							</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<!-- set3-->
+					<div class="pull-left">
+						<div class="coln-3">
+							<div class="textStyling">
+								<button class="btn btn-grey btn-xs labelStyle" id="btnBold" data-edit="bold"
+									title="Bold">
+									<input type="checkbox"><img src="img/b_icon.png">
+								</button>
+
+								<button class="btn btn-grey  btn-xs labelStyle" id="btnItalic"
+									data-edit="italic" title="Italic">
+									<input type="checkbox"><img src="img/i_icon.png">
+								</button>
+
+								<button class="btn btn-grey  btn-xs labelStyle" id="btnUnderline"
+									data-edit="underline" title="Underline">
+									<input type="checkbox"><img src="img/u_icon.png">
+								</button>
+							</div>
+							<div class="spinner">
+								<button class="btn btn-grey  btn-xs labelStyle" data-edit="linespace" title="Line Space"
+									data-toggle="buttons"> <input type="checkbox"><img
+									src="img/wSpinner.png">
+								</button>
+								<div class="input-group pull-right" style="width: 53px;">
+									<input id="linespaceMeasure" type="text" class="form-control" value="1.0 pt"/>
+									<div class="input-group-btn">
+										<button data-toggle="dropdown" class="btn btn-default dropdown-toggle"
+											title="Line Space Measure" type="button">
+											<span class="caret"></span>
+										</button>
+										<ul role="menu" class="dropdown-menu pull-right">
+											<li><a id="linespace_1pt0" href="javascript:applylineSpacing('1.0')">1.0 pt <span>
+												</span></a></li>
+											<li><a id="linespace_1pt15" href="javascript:applylineSpacing('1.15')">1.15 pt <span>
+												</span></a></li>
+											<li><a id="linespace_1pt5" href="javascript:applylineSpacing('1.5')">1.5 pt <span>
+												</span></a></li>
+											<li><a id="linespace_2pt0" href="javascript:applylineSpacing('2.0')">2.0 pt <span>
+												</span></a></li>
+											<li><a id="linespace_2pt5" href="javascript:applylineSpacing('2.5')">2.5 pt <span>
+												</span></a></li>
+											<li><a id="linespace_3pt0" href="javascript:applylineSpacing('3.0')">3.0 pt <span>
+												</span></a></li>
+										</ul>
+									</div>
+								</div>
+								<!--spinner-->
+							</div>
+							<!--spinner-->
+						</div>
+						<div class="pull-left">
+							<div class="btn-group pull-left indt-mrgn">
+								<button class="btn btn-grey  btn-xs btn-bullet btn-bullet1" id="btnul"
+									title="Bulleted List" data-edit="insertunorderedlist"
+									data-toggle="buttons" style="padding-top: 3px;">
+									<input type="checkbox"><img src="img/icon-bullet.png">
+								</button>
+
+								<button class="btn btn-grey  btn-xs btn-bullet btn-bullet2" id="btnol"
+									title="Numbered List" data-edit="insertorderedlist"
+									style="padding-bottom: 0px; padding-top: 0px;"
+									data-toggle="buttons" style="padding-top:3px;">
+									<input type="checkbox"><img src="img/icon-bullet-2.png">
+								</button>
+
+
+							</div>
+
+							<div class="btn-group pull-left" style="margin-right: 9px;">
+								<button class="btn btn-grey  btn-xs btn-bullet btn-bullet1"
+									title="Increase Indent" data-edit="indent"
+									style="padding-bottom: 0px; padding-top: 0px;"
+									data-toggle="buttons">
+									<input type="checkbox"><img
+										src="img/icon-indent-lft.png">
+								</button>
+
+								<button class="btn btn-grey  btn-xs btn-bullet btn-bullet2"
+									title="Decrease Indent" data-edit="outdent"
+									style="padding-bottom: 0px; padding-top: 0px;"
+									data-toggle="buttons">
+									<input type="checkbox"><img
+										src="img/icon-indent-rgt.png">
+								</button>
+
+							</div>
+
+							<!--spinner-->
+							<div class="input-group pull-left" style="width: 53px;">
+								<input id="indentOutdentMeasure" type="text" class="form-control" 
+									value="14 pt">
+			
+								<div class="input-group-btn">
+									<button data-toggle="dropdown" class="btn btn-default dropdown-toggle"
+										title="Indent Measure" type="button">
+										<span class="caret"></span>
+									</button>
+										
+									<ul role="menu" class="dropdown-menu pull-right">
+											<li><a id="indentOutdent_6" data-edit="indentOutdent 6"
+												href="javascript:changeIndentOutdent('6')">6 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_7" data-edit="indentOutdent 7"
+												href="javascript:changeIndentOutdent('7')">7 pt <span></span></a></li>
+											<li><a id="indentOutdent_8" data-edit="indentOutdent 8"
+												href="javascript:changeIndentOutdent('8')">8 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_9" data-edit="indentOutdent 9"
+												href="javascript:changeIndentOutdent('9')">9 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_10" data-edit="indentOutdent 10"
+												href="javascript:changeIndentOutdent('10')">10 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_11" data-edit="indentOutdent 11"
+												href="javascript:changeIndentOutdent('11')">11 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_12" data-edit="indentOutdent 12"
+												href="javascript:changeIndentOutdent('12')">12 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_14" data-edit="indentOutdent 14"
+												href="javascript:changeIndentOutdent('14')">14 pt <span
+													class="glyphicon glyphicon-ok glyphicon-posi"> </span></a></li>
+											<li><a id="indentOutdent_18" data-edit="indentOutdent 18"
+												href="javascript:changeIndentOutdent('18')">18 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_21" data-edit="indentOutdent 21"
+												href="javascript:changeIndentOutdent('21')">21 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_24" data-edit="indentOutdent 24"
+												href="javascript:changeIndentOutdent('24')">24 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_30" data-edit="indentOutdent 30"
+												href="javascript:changeIndentOutdent('30')">30 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_36" data-edit="indentOutdent 36"
+												href="javascript:changeIndentOutdent('36')">36 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_48" data-edit="indentOutdent 48"
+												href="javascript:changeIndentOutdent('48')">48 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_60" data-edit="indentOutdent 60"
+												href="javascript:changeIndentOutdent('60')">60 pt <span>
+												</span></a></li>
+											<li><a id="indentOutdent_72" data-edit="indentOutdent 72"
+												href="javascript:changeIndentOutdent('72')">72 pt <span>
+												</span></a></li>
+										</ul>
+									
+									<!-- <ul role="menu" class="dropdown-menu pull-right">
+										<li><a href="#">6 pt <span
+												class="glyphicon glyphicon-ok glyphicon-posi"></span></a></li>
+										<li><a href="#">12 pt <span
+												class="glyphicon glyphicon-ok glyphicon-posi"></span></a></li>
+										<li><a href="#">18 pt</a></li>
+										<li><a href="#">20 pt</a></li>
+									</ul> -->
+								</div>
+							</div>
+							<!--spinner-->
+						</div>
+
+					</div>
+				</div>
+				<!-- tool set three-->
+				<div class="tool-set3" data-role="editor-toolbar">
+					<!--<label >
+					Tabel formatting
+					</label>-->
+
+
+					<!--color-pallete-->
+					<!-- 		<div class="btn-group" >
+										<img src="img/icon31.png" class="btn btn-default dropdown-toggle font-colorJpicker" data-toggle="dropdown" style="border:none; background:none;">
+											<div  id="clr-palette" class="dropdown-menu pull-right" role="menu">
+											</div>
+											<button id="optionDropDownId" class="btn-dialog" style="" data-toggle="dropdown" type="button">
+													<img src="img/icon31.png" class="btn btn-default dropdown-toggle font-colorJpicker" style="border:none; background:none;">
+											</button>
+									</div>
+									<ul id="componentOptionDropDownId" role="menu" class="dropdown-menu dropdown-option">
+										<li>Test</li>
+									</ul> -->
+					<div class="btn-group">
+						<img id="font-colorJpicker" src="img/icon31.png"
+							data-toggle="dropdown" title="Fill Color">
+
+					</div>
+					<!--color-pallete-->
+					<!--no-stroke-->
+					<div class="btn-group">
+						<img id="border-colorJpicker" data-toggle="dropdown"
+							title="Background Color" src="img/icon32.png">
+					</div>
+					<!--no-stroke-->
+
+					<!--table-border-->
+					<div class="btn-group">
+						<img id="borderSelector" onmousedown="retainCaret(event);" style="border: none; background: none;"
+							data-toggle="dropdown" title="Table Border"
+							class="btn btn-default dropdown-toggle" src="img/icon34.png">
+						<ul style="right: auto;" class="dropdown-menu pull-right"
+							role="menu">
+							<li><a class="tble-pl" data-edit="border none" href="javascript:changeBorder('none')">none <span
+									class="tble t-none"></span></a></li>
+							<li><a class="tble-pl"  data-edit="border outside" href="javascript:changeBorder('outside')">outside <span
+									class="tble t-outside"></span></a></li>
+							<li><a class="tble-pl"  data-edit="border inside" href="javascript:changeBorder('inside')">inside <span
+									class="tble t-inside"></span></a></li>
+							<li><a class="tble-pl" data-edit="border all" href="javascript:changeBorder('all')">all <span
+									class="tble t-all"></span></a></li>
+							<li><a class="tble-pl" data-edit="border top" href="javascript:changeBorder('top')">top <span
+									class="tble t-top"></span></a></li>
+							<li><a class="tble-pl" data-edit="border bottom" href="javascript:changeBorder('bottom')">bottom <span
+									class="tble t-btm"></span></a></li>
+							<li><a class="tble-pl" data-edit="border left" href="javascript:changeBorder('left')">left <span
+									class="tble t-lft"></span></a></li>
+							<li><a class="tble-pl" data-edit="border right" href="javascript:changeBorder('right')">right <span
+									class="tble t-rgt"></span></a></li>
+						</ul>
+					</div>
+					<!--table-border-->
+
+				</div>
+				<!-- tool set four-->
+				<div class="tool-set4">
+					<div class="prnt-btn pull-left">
+						<!--<a href="#" style="margin-right:18px;"><img src="img/printbtn.png"></a>
+							<a href="#"><img src="img/resetgraybtn.png"></a>-->
+						<a title="I'm Done" href="javascript:clickIMDone()"
+							style="margin-right: 18px;"><img src="img/iamdone.png"></a>
+						<a title="Special character" onmousedown="retainCaret(event);" href="javascript:populateSpclCharPallete()"
+							style="margin-right: 18px;"><img src="img/buttonIMagenew.png"></a>
+					</div>
+					<a href="#" class="btn-preview"></a>
+				</div>
+
+
+			</div>
+			<div class="head-strip">
+				<h6>
+					<span id="spnCurrentPage"
+						style="margin-left: -670px; display: inline-block;" width: 80%;> </span><span
+						class="pull-right font11">Graded Objects = <span
+						class="font11" id="gdObjetPcHolder">0</span></span>
+				</h6>
+
+			</div>
+		</header>
+		<!--Header ends-->
+		<input type="hidden" value="" id="selectedColorValueId" />
+		<div id="htmlToTextConvertor" style="display: none;"></div>
+		<!--canvas starts -->
+		<div id="canvas-wrap"
+			style="margin-top: 125px; overflow-y:scroll; height: 450px; min-height:0px; ">
+			<div class="overlayNewFormula"></div>
+			<div id="formToolCanvasId" class="canvas-area">
+				<div class="allComponent"></div>
+			</div>
+		</div>
+
+		<!-- <div>
+				<textarea id="stateObjectJSON" rows=10 " cols="127"></textarea>
+			</div>
+		</div> -->
+	</div>
+	<!--canvas ends -->
+
+</div>
+	<input type="file" id="files" name="files[]" multiple class="btn-import" />
+<!--LEFT container ENDS -->
+
+<!--Right container Starts -->
+<div id="rgt-container" style="position: fixed; margin-left: 820px; height:600px; overflow-y:scroll;">
+
+	<!-- right accordian panel -->
+
+
+	<div class="panel-group" style="padding-left:10px;" id="accordion">
+
+		<!-- Canvas-Starts -->
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<h4 class="panel-title accordion-toggle" data-toggle="collapse"
+					href="#" data-parent="#accordion1" data-target="#collapseOne">
+					<a> Canvas </a>
+				</h4>
+			</div>
+			<div id="collapseOne" class="panel-collapse collapse in">
+				<div class="panel-body">
+					<div class="tabbable">
+						<!-- Only required for left/right tabs -->
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#canvas_page" data-toggle="tab">Parts</a></li>
+							<li><a href="#formulas_tab" data-toggle="tab">Formulas</a></li>
+							<li><a href="#tab3" data-toggle="tab">Paths</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="canvas_page">
+								<div class="head-info">
+									<a href="javascript:void(0);" onclick="showHelpModal('part');"
+										class="info-icon"></a> Page <label data-toggle="buttons"
+										class="btn btn-grey btn-xs pull-right"> <input
+										type="checkbox"> <img src="img/recycle.png">
+									</label> <label id="lblAddNewPage" data-toggle="buttons"
+										class="btn btn-grey btn-xs pull-right marginR5"> <input
+										type="checkbox"> <img src="img/filePlus.png">
+									</label>
+								</div>
+								<div class="clear"></div>
+								<div class="saperator"></div>
+								<div class="tabContent">
+									<div id="dvPages">
+										<div class="clear"></div>
+									</div>
+
+									<div class="saperator"></div>
+									<span id="spnPageInfo"></span>
+								</div>
+							</div>
+
+							<div class="tab-pane " id="formulas_tab">
+								<div class="componentTytle">
+									<a href="#" class="info-icon"></a>Formulas
+								</div>
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#home" class="Properties_MRT"
+										data-toggle="tab">Properties</a></li>
+									<li><a href="#profile" data-toggle="tab">Info</a></li>
+								</ul>
+
+								<!-- Formula Tab -->
+								<div class="tab-content formula_tab_properties">
+									<div class="tab-pane fade in active" id="home">
+										<a href="#profile" id="newFormula" data-toggle="tab">New</a>
+										<table class="table tblBorder">
+											<tbody>
+												<tr>
+													<td><a href="#"><span
+															class="glyphicon glyphicon-trash"></span></a><a href="#">Sum</a></td>
+													<td><span class="pull-right">ID001</span></td>
+												</tr>
+												<tr>
+													<td><a href="#"><span
+															class="glyphicon glyphicon-trash"></span></a><a href="#">Addition</a></td>
+													<td><span class="pull-right">ID001</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<input type="text" class="input_wdth"
+											placeholder="New Formula Name"><br />
+										<textarea style=""> =</textarea>
+										<br />
+										<div class="checkbox">
+											<label><input type="checkbox"> Do not show
+												formula in post submission </label>
+										</div>
+										<div class="btn_wdth">
+											<button type="button" class="btn btn-default btn1">cancel</button>
+											<button type="button" class="btn btn-default btn2">Save</button>
+										</div>
+									</div>
+									<!--Info tab-->
+									<div class="tab-pane fade" id="profile">
+										<ul>
+											<li data-toggle="collapse" data-target="#demo1"><a
+												href="#">+ Addition</a>
+											<div id="demo1" class="collapse">tttttt</div></li>
+											<li data-toggle="collapse" data-target="#demo2"><a
+												href="#">- Subtraction</a>
+											<div id="demo2" class="collapse">tttttt</div></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="tab-pane" id="tab3">
+								<div class="btn_wdth">
+									<button id="createPath" type="button" class="btn btn-primary create-path-button" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" >
+										Create New Path</button>
+									<!-- <button class="btn btn-default btn2 btnPath" type="button" id="createPath">Create new path</button> -->
+								</div>
+								<div id="branch-list">No existing paths</div>
+								<!-- <div class="head-info">
+									<a href="javascript:void(0);" onclick="showHelpModal('size');"
+										class="info-icon"></a> Size
+								</div> -->
+								<div class="dimension" style="display:none">
+									<div class="wd">
+										W <input type="text" id="canvasWidth" value="800"
+											class="in-dimen" disabled="disabled"> px
+									</div>
+									<div class="ht">
+										H <input type="text" id="canvasHeight" value="600"
+											class="in-dimen" disabled="disabled"> px
+									</div>
+								</div>
+							</div> 
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Canvas-Ends -->
+
+		<!-- Components-Starts -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="check-outline">
+					<!--<input type="checkbox" id="c3" name="cc" />
+        	<label for="c3"><span></span>Outlines</label>-->
+				</div>
+				<h4 class="panel-title accordion-toggle collapsed"
+					data-toggle="collapse" href="#" data-parent="#accordion2"
+					data-target="#collapseTwo">
+					<a><span class="arrow-right"></span> Components </a>
+
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse">
+				<div class="panel-body">
+					<div class="compo">
+						<div class="componentTytle">
+							<a href="javascript:void(0);"
+								onclick="showHelpModal('compType');" class="info-icon"></a>
+							Component Type
+						</div>
+						<ul>
+							<li id="inputField" class="dragComponent"><a href="#"><img
+									src="img/icon-text-box.gif"> <span>Input and
+										Labels</span></a></li>
+
+							<li id="multiplechoice" class="dragComponent"><a href="#"><img
+									src="img/icon-radio-btn.png"> <span>Multiple
+										Choice</span></a></li>
+
+							<li id="checkbox" class="dragComponent"><a href="#"><img
+									src="img/icon-checkbox.png"> <span>Check all that
+										apply</span></a></li>
+
+							<!-- <li>
+        			<a href="#"><img src="img/icon-dropdown.png">
+        			<span>Dropdown Menu</span></a>
+        		</li> -->
+
+							<li id="basictable" class="dragComponent"><a href="#"><img src="img/icon-basic-tble.gif">
+									<span>Basic Table</span></a></li>
+
+							<li id="scale" class="dragComponent"><a href="#"><img
+									src="img/icon-scale.gif"> <span>Scale</span></a></li>
+
+							<!--<li>
+        			<a href="#"><img src="img/icon-complex-tble.gif">
+        			<span>Complex Table</span></a>
+        		</li>
+        		
+        		<li>
+        			<a href="#"><img src="img/icon-column-tble.gif">
+        			<span>Column Table</span></a>
+        		</li>
+        		
+        		<li>
+        			<a href="#"><img src="img/icon-row-tble.gif">
+        			<span class="date">Row Table</span></a>
+        		</li>-->
+
+							<!--<li class="compo2"><a href="#"> <span class="line">Line</span></a>
+							</li>-->
+
+							<!--<li class="compo2">
+        		<a href="#">
+        			<span class="date">Date Picker </span>
+        			</a>
+        		</li>-->
+						</ul>
+						<div class="clear"></div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		<!-- Components-Ends -->
+
+		<!-- Componenent Option-Starts -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title accordion-toggle collapsed"
+					data-toggle="collapse" data-parent="#accordion3" href="#"
+					data-target="#collapseThree">
+					<a class="componentOptionAccordianPanel"> Component Options</a>
+
+				</h4>
+			</div>
+
+			<div class="btn-group btn-group-1 ">
+				<button id="optionDropDownId" type="button" class="btn-dialog"
+					data-toggle="dropdown" style="display: none;">
+					<span class="caretdialog"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-option" role="menu"
+					id="componentOptionDropDownId">
+
+				</ul>
+			</div>
+
+			<div id="collapseThree" class="panel-collapse collapse">
+				<div class="panel-body">
+					<div class="tabbable">
+						<!-- Only required for left/right tabs -->
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#componenetTab1"
+								data-toggle="tab">Add properties</a></li>
+							<!--<li><a href="#componenetTab2" data-toggle="tab">Add
+									paths</a></li>-->
+							<li><a href="#componenetTab3" data-toggle="tab">Add
+									media</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane-compOptions tab-pane active" id="componenetTab1">
+								<div class="tab-pane active" id="tab1">
+									<div id="properties" style="display: none; height:auto !important;"></div>
+
+									<div class="tab-pane active" id="elementProperties"></div>
+								</div>
+							</div>
+							<div class="tab-pane-compOptions tab-pane" id="componenetTab2">
+								<p>This is Tab 2</p>
+							</div>
+							<div class="tab-pane-compOptions tab-pane" id="componenetTab3">
+								<div class="tab-pane active" id="mediaProperties"></div>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<input type="text" hidden id="branchEdit" value="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
