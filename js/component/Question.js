@@ -736,8 +736,7 @@ Question.prototype = {
 						if(isEqual){
 							console.log("disable flag isequal");
 							partConfig.enabled= false;
-						}else if(!this.pages[i].isBranchDest && this.pages[0].isRequiredToProgressMeet()){
-							//console.log("enable flag"+this.pages[i].isBranchDest+"t"+this.pages[i].isRequiredToProgressMeet());
+						}else if(i!=0 && !this.pages[i].isBranchDest && this.pages[0].isRequiredToProgressMeet() && this.previousPartAnswered(i)){
 							partConfig.enabled= true;
 						}else{
 							console.log("disable flag");
@@ -767,6 +766,14 @@ Question.prototype = {
 			
 			return html;
 		},
+		previousPartAnswered:function(currentPart){
+			var isAns=true;
+			for(var i=0;i<currentPart;i++){
+				isAns=isAns && this.pages[i].isRequiredToProgressMeet();
+			}
+			return isAns;
+			
+		},
 		hiddenComponentsOnPage:function(page){
 			var hiddenCom=0;
 			for (i in page.components) {
@@ -786,7 +793,7 @@ Question.prototype = {
 						this.progressBar.parts[i].enabled=enableFlag;
 						enableFlag=false;
 					}else{
-						enableFlag=true;
+						//enableFlag=true;
 						this.progressBar.parts[i].enabled=enableFlag;
 					}
 					if(this.branches.length > 0){
